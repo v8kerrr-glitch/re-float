@@ -1,0 +1,912 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: 004CB9;
+}
+.wrap_wrap{
+    min-width: 1400px;
+    overflow: hidden;
+}
+
+/* 메인비디오 */
+.main video {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+.main {
+    display: block;
+    overflow: hidden;
+    height: 1060px;
+    position: relative;
+}
+
+/* 메인비디오 끝 */
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: 나눔고딕;
+    background-color: #fdfcf8;
+    ;
+}
+
+
+ul {
+    display: flex;
+}
+
+#header_wrap {
+    height: 70px;
+    background-color: #004CB9;
+    margin: 0 auto;
+    color: black;
+    position: fixed;
+    /* 화면에 고정하겠다는 의미 */
+    top: 0;
+    /* 화면 맨 위에 딱 붙임 */
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header {
+    height: 70px;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* 로고와 메뉴 세로 중앙 정렬 */
+    justify-content: space-between;
+}
+
+.logo {
+    width: 84px;
+    height: 36px;
+    display: block;
+    object-fit: contain;
+     /* 
+    이미지 하단 공백 제거 */
+}
+/* 서브메뉴 */
+
+/* GNB 아이템을 상대 위치로 설정 */
+
+/* 메가 메뉴 기본 설정 */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    /* GNB 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: #fdfcf8;
+    display: none;
+    /* 기본 숨김 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    margin: 0 auto;
+    color: #000;
+}
+
+/* 호버 시 나타나기 */
+.menu-item:hover .mega-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 내부 콘텐츠 레이아웃 */
+.mega-inner {
+    display: flex;
+    gap: 100px;
+    width: 1320PX;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* 3. 아이콘과 텍스트 정렬 */
+.item {
+    display: flex;
+    align-items: center;
+    /* 아이콘과 텍스트 세로 중앙 정렬 */
+    gap: 15px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 24px;
+    /* 이미지 사이즈 조절 */
+    height: 24px;
+    object-fit: contain;
+}
+
+.text-wrap h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.text-wrap p {
+    font-size: 13px;
+    color: #666;
+}
+
+.menu-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.item h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.item h4:hover{
+    text-decoration: underline 2px solid #000;
+}
+.item p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* gnb 스타일 수정 */
+.gnb {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* 메뉴 간의 간격을 조절합니다 (필요에 따라 조절) */
+}
+
+/* 로고와 메뉴 사이의 강제적인 여백(auto) 제거 */
+.gnb > li:first-child {
+    margin-right: 0; 
+}
+.gnb li p {
+    font-size: 16px;
+    padding: 23px 30px;
+  
+}
+
+.gnb>li>a {
+    position: relative;
+    text-decoration: none;
+    color: #fdfcf8;
+}
+
+.gnb>li>a::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fdfcf8;
+    transition: width 0.3s ease;
+    /* 부드러운 밑줄 효과 */
+}
+
+.menu-item:hover>a::after {
+    width: 100%;
+    /* 호버 시 밑줄 100% */
+}
+
+/* lnb */
+
+.lnb li {
+    font-size: 16px;
+    margin: 10px;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 배경색과 패딩은 a 태그로 이동 */
+}
+
+.lnb li a {
+    display: flex;
+    /* Flexbox 사용 */
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #004CB9;
+    color: #fdfcf8;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.lnb li a:hover {
+    background-color: #000;
+}
+
+.logo {
+    height: 60px;
+}
+
+ul {
+    display: flex;
+}
+
+/* 헤더 끝 */
+
+#banner_wrap {
+    height: 490px;
+    color: #fdfcf8;
+    ;
+}
+
+.banner {
+    height: 490px;
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.banner_h6 {
+    text-align: center;
+    color: black;
+    padding-top: 120px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.banner_h1 {
+    text-align: center;
+    color: black;
+    font-size: 56px;
+
+}
+
+.banner_p {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+
+.banner_a {
+
+    display: block;
+    /* 블록으로 변경 */
+    width: 100px;
+    /* 너비 지정 (필수) */
+    margin: 0 auto;
+    /* 가로 중앙 정렬 */
+    text-align: center;
+    /* 내부 글자 중앙 정렬 */
+
+    padding: 20px 0;
+    background-color: #004CB9;
+    color: white;
+    text-decoration: none;
+}
+
+.banner_a:hover {
+    background-color: #000;
+}
+
+/* 여기까지가 배너 */
+
+#main1_wrap {
+    height: 720px;
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.main1 {
+    height: 720px;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.main1_left {
+    width: 660px;
+    height: 720px;
+}
+
+.main1_right {
+    width: 660px;
+    height: 720px;
+}
+
+.main1_h6 {
+    font-size: 16px;
+    padding-top: 170px;
+    padding-left: 40px;
+}
+
+.main1_h1 {
+    padding-top: 15px;
+    padding-left: 40px;
+    font-size: 48px;
+    line-height: 65px;
+}
+
+.main1_p {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: 18px;
+}
+
+.main1_ul li {
+    padding-left: 40px;
+}
+
+.main1_h4 {
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.main1_h5 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* main1끝 */
+
+/* main2시작 */
+
+#main2_wrap {
+    height: 850px;
+}
+
+.main2 {
+    height: 850px;
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.main2_h6 {
+    font-size: 16px;
+    padding-top: 170px;
+    padding-left: 40px;
+}
+
+.main2_h1 {
+    padding-top: 15px;
+    padding-left: 40px;
+    font-size: 48px;
+    line-height: 65px;
+}
+
+.main2_p {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: 18px;
+}
+
+.main2_ul {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main2_h5 {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.main2_p_Ul {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+#main3_wrap {
+    height: 470px;
+}
+
+.main3 {
+    margin: 0 auto;
+    height: 470px;
+    width: 1320px;
+    overflow: hidden;
+    position: relative;
+    color: #fdfcf8;
+}
+
+.main3 video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main3_h6 {
+    position: absolute;
+    font-size: 16px;
+}
+
+#main4_wrap {
+    margin: 0 auto;
+    height: 830px;
+}
+
+.main4 {
+    width: 1320px;
+    height: 830px;
+    margin: 0 auto;
+
+}
+
+#main5_wrap {
+    height: 1160px;
+    margin: 0 auto;
+
+}
+
+.main5_1 {
+    height: 410px;
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main5_h1 {
+    font-size: 48px;
+    padding-top: 90px;
+}
+
+.main5_p {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+.main5_a {
+
+    display: block;
+    /* 블록으로 변경 */
+    width: 100px;
+    /* 너비 지정 (필수) */
+    margin: 0 auto;
+    /* 가로 중앙 정렬 */
+    text-align: center;
+    /* 내부 글자 중앙 정렬 */
+
+    padding: 20px 0;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+}
+
+.main5_a:hover {
+    background-color: #004CB9;
+}
+
+.main5_2 {
+    margin: 0 auto;
+    height: 740px;
+    width: 1320px;
+    display: flex;
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    height: 100%;
+    position: relative;
+}
+
+#slider-img {
+    position: absolute;
+    top: 0;
+    width: 1320px;
+    margin: 0 auto;
+    height: 740px;
+    object-fit: cover;
+    /* 이미지가 찌그러지지 않고 비율을 유지하며 꽉 채워지게 함 */
+
+}
+
+/* main5 끝 */
+
+.main6 {
+    height: 200px;
+}
+
+#footer_wrap {
+    height: 540px;
+    background-color: #004CB9;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer1 {
+    height: 540px;
+    width: 1320px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.footer_left {
+    height: 540px;
+    width: 670px;
+    margin: 0 auto;
+}
+
+.footer_logo {
+    width: 110px;
+    /* 원하는 가로 크기로 조절 */
+    height: auto;
+    /* 비율을 유지하며 높이 자동 조절 */
+    display: block;
+    position: relative;
+    top: 80px;
+}
+
+.footer-subscribe {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* 텍스트와 입력창 사이 간격 */
+}
+
+.subscribe-form {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    /* 필요에 따라 조정 */
+    position: absolute;
+    top: 200px;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #000;
+    outline: none;
+    width: 400px;
+    height: 50px;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+.subscribe-form button {
+    padding: 12px 25px;
+    background-color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscribe-form button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.subscribe-text_h3 {
+    position: absolute;
+    top: 155px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.subscribe-text_p {
+    color: #000;
+    font-size: 12px;
+    position: absolute;
+    top: 260px;
+}
+
+.footer_right_wrap {
+    width: 670px;
+    height: 540px;
+    background-color: #004CB9;
+    overflow: hidden;
+}
+
+/* 푸터 li */
+
+.footer {
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    /* 전체를 세로로 정렬 */
+    gap: 40px;
+    /* 섹션 간의 간격 */
+}
+
+.footer-title1 {
+    font-size: 16px;
+    font-weight: bold;
+    /* 제목 굵게 */
+    margin-bottom: 15px;
+
+}
+
+/* 1320px 컨테이너 기준 정렬 */
+.footer1 {
+    width: 1320px;
+    margin: 0 auto; /* 좌우 중앙 정렬 */
+    display: flex;
+    justify-content: space-between; /* 왼쪽(logo)과 오른쪽(nav) 배치 */
+    align-items: flex-start;
+}
+
+/* 오른쪽 영역을 묶은 컨테이너 */
+.footer_nav_container {
+    display: flex;
+    gap: 120px; /* 탐색하기와 팔로우 사이의 간격 */
+    justify-content: flex-end; /* 이 부분이 오른쪽 정렬 핵심 */
+    /* 1. 오른쪽으로 더 밀기 */
+    /* 2. 위쪽 여백 주기 */
+    margin-top: 90px; /* 푸터 상단에서 내려올 간격 */
+}
+
+
+
+/* absolute 제거하고 자연스럽게 배치 */
+.footer-title1, .footer-title2, .footer-links1, .footer-links2 {
+    position: static; /* absolute 제거 */
+    margin: 0;
+}
+
+
+
+/* 내비게이션 스타일은 그대로 유지하되 
+   flex를 활용해 쌓이도록 함 */
+.footer_right, .footer_right_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-title2 {
+    font-size: 16px;
+    font-weight: bold;
+    /* 제목 굵게 */
+    margin-bottom: 15px;
+
+}
+
+.footer-links1 {
+    display: flex;
+    flex-direction: column;
+    /* 링크들을 세로로 정렬 */
+    gap: 10px;
+    /* 링크 사이 간격 */
+
+}
+
+.footer-links2 {
+    display: flex;
+    flex-direction: column;
+    /* 링크들을 세로로 정렬 */
+    gap: 10px;
+    /* 링크 사이 간격 */
+
+}
+
+.footer-links1 a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    /* 밑줄 제거 */
+    font-size: 14px;
+}
+
+.footer-links1 a:hover {
+    color: white;
+}
+
+.footer-links2 a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    /* 밑줄 제거 */
+    font-size: 14px;
+}
+
+.footer-links2 a:hover {
+    color: white;
+}
+
+.footer-links2 a {
+    display: flex;
+    /* 아이콘과 텍스트를 나란히 배치 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    gap: 10px;
+    /* 아이콘과 텍스트 사이 간격 */
+
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    /* 텍스트 크기 */
+}
+
+.footer-links2 a img {
+    width: 17px;
+    /* 폰트 크기인 16px와 동일하게 설정 */
+    height: 17px;
+    object-fit: contain;
+    /* 이미지가 찌그러지지 않게 유지 */
+}
+
+
+/* FOOTER */
+
+.footer-wrap {
+    margin: 0 auto;
+    width: 1920px;
+    height: 540px;
+    background-color: #004CB9;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.footer-inner {
+    width: 1320px;
+    padding-top: 80px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 왼쪽 영역 */
+.logo-img {
+    width: 150px;
+    /* 로고 이미지의 실제 너비에 맞춰 조정하세요 */
+    height: auto;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.desc {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.input-group input {
+    width: 400px;
+    padding: 14px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid #666;
+}
+
+.input-group button {
+    padding: 14px 28px;
+    border: none;
+    background: #fff;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #000;
+    color: #fdfcf8;
+}
+
+.sub-text {
+    font-size: 12px;
+    opacity: 0.7;
+    color: #000;
+}
+
+/* 오른쪽 메뉴 */
+.footer-right {
+    display: flex;
+    gap: 120px;
+}
+
+.menu-group {
+    display: flex;
+    color: #000;
+    flex-direction: column;
+    /* 요소를 세로로 배치 */
+}
+
+.menu-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.menu-title:hover{
+    text-decoration: underline 1px solid #000;
+}
+.menu-list,
+.sns-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* 리스트 아이템을 세로로 정렬 */
+    gap: 12px;
+    /* 아이템 간의 세로 간격 */
+}
+
+.menu-list li {
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* SNS 아이콘 조정 */
+.sns-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* 아이콘과 텍스트 사이 간격 */
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sns-list li img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* 하단 카피라이트 */
+.footer-bottom {
+    margin-top: 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+}
+
+/* 탐색하기 메뉴 리스트 아이템 호버 */
+
+
+.menu-list li a:hover {
+    text-decoration: underline;
+    opacity: 0.8; /* 호버 시 약간 투명하게 해서 효과 강조 */
+}
+
+/* 팔로우 리스트 아이템 호버 */
+
+
+.sns-list li:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}

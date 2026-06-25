@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #fdfcf8;
+}
+#wrap_wrap{
+    min-width: 1400px;
+    overflow: hidden;
+}
+
+#marquee_wrap {
+    width: 100%;
+    height: 40px;
+    /* div 높이 */
+    background-color: #004CB9;
+    /* 배경색 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    border-top: 1px solid #004CB9;
+    border-bottom: 1px solid #004CB9;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 15s linear infinite;
+    /* 속도 조절 가능 */
+}
+
+.text-item {
+    font-size: 16px;
+    /* 폰트 크기 */
+    color: #000000;
+    /* 글자 색상 */
+    font-weight: bold;
+    padding: 0 40px;
+    /* 단어 사이의 일정한 간격 */
+    display: inline-block;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* 전체 내용의 절반 지점까지만 이동 */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: 나눔고딕;
+}
+
+#header_wrap {
+    height: 70px;
+    background-color: #004CB9;
+    margin: 0 auto;
+    color: black;
+    position: fixed;
+    /* 화면에 고정하겠다는 의미 */
+    top: 0;
+    /* 화면 맨 위에 딱 붙임 */
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header {
+    height: 70px;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* 로고와 메뉴 세로 중앙 정렬 */
+    justify-content: space-between;
+}
+
+.logo {
+    width: 84px;
+    height: 36px;
+    display: block;
+    object-fit: contain;
+     /* 
+    이미지 하단 공백 제거 */
+}
+/* 서브메뉴 */
+
+/* GNB 아이템을 상대 위치로 설정 */
+
+/* 메가 메뉴 기본 설정 */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    /* GNB 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: #fdfcf8;
+    display: none;
+    /* 기본 숨김 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    margin: 0 auto;
+    color: #000;
+}
+
+/* 호버 시 나타나기 */
+.menu-item:hover .mega-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 내부 콘텐츠 레이아웃 */
+.mega-inner {
+    display: flex;
+    gap: 100px;
+    width: 1320PX;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* 3. 아이콘과 텍스트 정렬 */
+.item {
+    display: flex;
+    align-items: center;
+    /* 아이콘과 텍스트 세로 중앙 정렬 */
+    gap: 15px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 24px;
+    /* 이미지 사이즈 조절 */
+    height: 24px;
+    object-fit: contain;
+}
+
+.text-wrap h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.text-wrap p {
+    font-size: 13px;
+    color: #666;
+}
+
+.menu-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.item h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.item h4:hover{
+    text-decoration: underline 2px solid #000;
+}
+.item p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* gnb 스타일 수정 */
+.gnb {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* 메뉴 간의 간격을 조절합니다 (필요에 따라 조절) */
+}
+
+/* 로고와 메뉴 사이의 강제적인 여백(auto) 제거 */
+.gnb > li:first-child {
+    margin-right: 0; 
+}
+.gnb li p {
+    font-size: 16px;
+    padding: 23px 30px;
+  
+}
+
+.gnb>li>a {
+    position: relative;
+    text-decoration: none;
+    color: #fdfcf8;
+}
+
+.gnb>li>a::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fdfcf8;
+    transition: width 0.3s ease;
+    /* 부드러운 밑줄 효과 */
+}
+
+.menu-item:hover>a::after {
+    width: 100%;
+    /* 호버 시 밑줄 100% */
+}
+
+/* lnb */
+
+.lnb li {
+    font-size: 16px;
+    margin: 10px;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 배경색과 패딩은 a 태그로 이동 */
+}
+
+.lnb li a {
+    display: flex;
+    /* Flexbox 사용 */
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #004CB9;
+    color: #fdfcf8;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.lnb li a:hover {
+    background-color: #000;
+}
+
+.logo {
+    height: 60px;
+}
+
+ul {
+    display: flex;
+}
+
+/* 아카이브 시작 */
+
+/* 전체 컨테이너 (1920x460) */
+.archive-wrap {
+    width: 1920px;
+    height: 460px;
+    background-color: #fdfcf8; /* 디자인에 맞게 배경색 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* 내부 컨텐츠 (1320x460) */
+.archive-inner {
+    width: 1320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 텍스트를 가로 중앙 정렬 */
+    text-align: center;
+}
+
+/* 텍스트 스타일 */
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 60px; /* 제목 크기 조정 */
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+.desc {
+    font-size: 18px;
+    color: #333;
+}
+
+/* 피쳐랩 시작 */
+
+/* 전체 랩 (1920x940) */
+#features-wrap {
+    width: 1920px;
+    height: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #fdfcf8;
+}
+
+/* 콘텐츠 랩 (1320x940) */
+.features-inner {
+    width: 1320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.features-header, 
+.card {
+    text-align: center;
+}
+
+/* 상단 텍스트 */
+.section-badge { font-size: 14px; margin-bottom: 10px; color: #666; font-weight: bold;}
+.section-title { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+.section-desc { font-size: 18px; color: #333; margin-bottom: 80px; }
+
+/* 카드 배치 */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.card {
+    width: 400px; /* 카드 너비 */
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 300px; /* 이미지 높이 조절 */
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.card h3 { font-size: 24px; margin-bottom: 15px; }
+.card p { font-size: 16px; color: #666; }
+
+/* 버튼 스타일 */
+.more-btn {
+    padding: 15px 40px;
+    background-color: #004CB9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.more-btn:hover{
+    background-color: #000;
+    color: #fdfcf8;
+}
+
+/* 블루룸 시작 */
+
+.wrapper { 
+    width: 1920px; 
+    height: 860px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #fdfcf8; 
+}
+
+.content-wrapper { 
+    width: 1320px; 
+    height: 860px; 
+    display: flex; 
+    align-items: center; 
+    /* 여기서 정렬 방식을 변경합니다 */
+    justify-content: flex-end; 
+    gap: 100px; 
+}
+
+.text-section{
+    padding-right: 200px;
+}
+
+.text-section h1{
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+.text-section p{
+    font-size: 18px;
+}
+.slider-container { 
+    width: 560px; 
+    height: 560px; 
+    overflow: hidden; 
+    position: relative; 
+    padding-right: 100px;
+}
+
+.slider { 
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+    width: fit-content;
+}
+
+.slider img { 
+    width: 560px; 
+    height: 560px; 
+    object-fit: cover; 
+}
+
+/* 기존 코드는 유지하고 아래 내용을 수정/추가하세요 */
+/* 슬라이더 영역 및 컨트롤러 전체 폭 */
+.slider-container, .controls {
+    width: 560px;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.slider-container {
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 4480px; /* 560px * 8개 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-wrapper img {
+    width: 560px;
+    height: 560px;
+    object-fit: cover;
+}
+
+/* 컨트롤러 배치: 양 끝 정렬 */
+.controls {
+    display: flex;
+    justify-content: space-between; /* 버튼은 좌측, 점은 우측으로 */
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 버튼 그룹 간격 */
+.nav-buttons {
+    display: flex;
+    gap: 30px; /* 화살표 버튼 간격 */
+}
+
+/* 화살표 버튼 크기 고정 (48px * 48px) */
+.nav-buttons button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center; /* 화살표 텍스트 세로 중앙 정렬 */
+    justify-content: center; /* 화살표 텍스트 가로 중앙 정렬 */
+    background-color: #fdfcf8; /* 배경색이 필요하면 여기에 추가 */
+    border-radius: 50%;
+    border: 1px solid #ccc; /* 테두리 필요 시 */
+    cursor: pointer;
+    padding: 0;
+    font-size: 18px; /* 화살표 크기 조절 */
+}
+
+/* 버튼 hover 효과 (선택사항) */
+.nav-buttons button:hover {
+    background-color: #ddd;
+}
+/* 점 그룹 */
+.dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #000;
+}
+
+
+
+#main5_wrap {
+    height: 1160px;
+    margin: 0 auto;
+
+}
+
+.main5_1 {
+    height: 410px;
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main5_h1 {
+    font-size: 48px;
+    padding-top: 90px;
+}
+
+.main5_p {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+.main5_a {
+
+    display: block;
+    /* 블록으로 변경 */
+    width: 100px;
+    /* 너비 지정 (필수) */
+    margin: 0 auto;
+    /* 가로 중앙 정렬 */
+    text-align: center;
+    /* 내부 글자 중앙 정렬 */
+
+    padding: 20px 0;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+}
+
+.main5_a:hover {
+    background-color: #004CB9;
+}
+
+.main5_2 {
+    margin: 0 auto;
+    height: 740px;
+    width: 1320px;
+    display: flex;
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    height: 100%;
+    position: relative;
+}
+
+#slider-img {
+    position: absolute;
+    top: 0;
+    width: 1320px;
+    margin: 0 auto;
+    height: 740px;
+    object-fit: cover;
+    /* 이미지가 찌그러지지 않고 비율을 유지하며 꽉 채워지게 함 */
+
+}
+
+/* 텍스트 시작 */
+#faq-section {
+    width: 1920px;
+    height: 1230px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    width: 1302px;
+    height: 1230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-header-box { padding-top: 100px; margin-bottom: 60px; }
+.faq-header-box h2 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+
+/* 그리드 영역: 높이를 고정하여 하단 박스 위치 보장 */
+.faq-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 40px;
+    height: 700px; /* 그리드가 차지할 높이 */
+}
+
+.faq-card h3 { font-size: 20px; margin-bottom: 15px; }
+.faq-card p { font-size: 16px; color: #666; line-height: 1.6; }
+
+/* 하단 문의박스: 확실한 구분 */
+/* 하단 문의박스: 여백 추가 */
+.faq-footer-box {
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
+    margin-top: auto;        /* 위쪽 공간 자동 확보 */
+    padding-bottom: 100px;   /* 문의하기 버튼 밑에 100px 공간 확보 */
+}
+
+.faq-action-btn {
+    width: 140px;
+    height: 50px;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.faq-action-btn:hover{
+    background-color: #000;
+    color: #fdfcf8;
+}
+/* 푸터 시작 */
+
+/* FOOTER */
+
+.footer-wrap {
+    margin: 0 auto;
+    width: 1920px;
+    height: 540px;
+    background-color: #004CB9;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.footer-inner {
+    width: 1320px;
+    padding-top: 80px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 왼쪽 영역 */
+.logo-img {
+    width: 150px;
+    /* 로고 이미지의 실제 너비에 맞춰 조정하세요 */
+    height: auto;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.desc {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.input-group input {
+    width: 400px;
+    padding: 14px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid #666;
+}
+
+.input-group button {
+    padding: 14px 28px;
+    border: none;
+    background: #fff;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #000;
+    color: #fdfcf8;
+}
+
+.sub-text {
+    font-size: 12px;
+    opacity: 0.7;
+    color: #000;
+}
+
+/* 오른쪽 메뉴 */
+.footer-right {
+    display: flex;
+    gap: 120px;
+}
+
+.menu-group {
+    display: flex;
+    color: #000;
+    flex-direction: column;
+    /* 요소를 세로로 배치 */
+}
+
+.menu-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.menu-list,
+.sns-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* 리스트 아이템을 세로로 정렬 */
+    gap: 12px;
+    /* 아이템 간의 세로 간격 */
+}
+
+.menu-list li {
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* SNS 아이콘 조정 */
+.sns-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* 아이콘과 텍스트 사이 간격 */
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sns-list li img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* 하단 카피라이트 */
+.footer-bottom {
+    margin-top: 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+}
+
+.menu-list li:hover{
+    text-decoration: underline 1px solid #000;
+}
+.sns-list li:hover{
+    text-decoration: underline 1px solid #000;
+}
