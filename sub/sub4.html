@@ -7,9 +7,32 @@
     <title>re:float</title>
     <link rel="stylesheet" href="../css/style(sub4).css">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/Company Logo - 복사본.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/Company Logo - 복사본.png">
 </head>
 
 <body>
+    <div class="pixel-cursor"></div>
+
+    <script>const cursor = document.querySelector('.pixel-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // 버튼, 링크, 문의하기 버튼 등에 호버 시 active 클래스 추가
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.matches('a, button, .faq-action-btn')) {
+                cursor.classList.add('active');
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.matches('a, button, .faq-action-btn')) {
+                cursor.classList.remove('active');
+            }
+        });</script>
     <div id="wrap_wrap">
         <div id="header_wrap">
             <div id="header_wrap">
@@ -64,14 +87,23 @@
         </div>
         <div id="banner_wrap">
             <div class="banner">
-                <h6 class="banner_h6">연결</h6>
-                <h1 class="banner_h1">우리와 함께</h1>
-                <p class="banner_p">
-                    질문이 있으신가요? 우리는 항상 당신의 얘기를 듣고 있습니다
-                </p>
-                <a href="#" class="banner_a">더보기</a>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h6 class="banner_h6">연결</h6>
+                    <h1 class="banner_h1">우리와 함께</h1>
+                    <p class="banner_p">
+                        질문이 있으신가요? 우리는 항상 당신의 얘기를 듣고 있습니다
+                    </p>
+                    <a href="" class="banner_a">더보기</a>
+                </div>
             </div>
         </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            AOS.init();
+        </script>
+
         <section id="faq-section">
             <div class="faq-container">
                 <div class="faq-header-box">
@@ -128,9 +160,11 @@
         </section>
         <!-- 입력칸 -->
         <div class="wrapper_text">
-            <h6>투명성</h6>
-            <h1>당신의 선택이 바다를 바꿉니다</h1>
-            <p>RE:FLOAT와 함께 만들어가는 이 변화는 더 푸른 내일로 향하는 가장 확실한 약속입니다.</p>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <h6>투명성</h6>
+                <h1>당신의 선택이 바다를 바꿉니다</h1>
+                <p>RE:FLOAT와 함께 만들어가는 이 변화는 더 푸른 내일로 향하는 가장 확실한 약속입니다.</p>
+            </div>
         </div>
         <div class="wrapper">
 
@@ -150,9 +184,11 @@
         <div class="main-wrapper">
             <div class="content1-wrapper">
                 <section class="text1-section">
-                    <h1>우리의 영향을 확인하세요</h1>
-                    <p>RE:FLOAT의 지속가능성 여정을 자세히 알아보세요.</p>
-                    <button class="download-btn">보고서 다운로드</button>
+                    <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <h1>우리의 영향을 확인하세요</h1>
+                        <p>RE:FLOAT의 지속가능성 여정을 자세히 알아보세요.</p>
+                        <button class="download-btn">보고서 다운로드</button>
+                    </div>
                 </section>
 
                 <div class="image1-section">

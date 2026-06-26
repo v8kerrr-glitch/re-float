@@ -7,9 +7,32 @@
     <title>re:float</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./img/Company Logo - 복사본.png">
     <link rel="stylesheet" href="../css/style(sub3).css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/Company Logo - 복사본.png">
 </head>
 
 <body>
+    <div class="pixel-cursor"></div>
+
+<script>const cursor = document.querySelector('.pixel-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// 버튼, 링크, 문의하기 버튼 등에 호버 시 active 클래스 추가
+document.addEventListener('mouseover', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.add('active');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.remove('active');
+    }
+});</script>
     <div id="wrap_wrap">
         <div id="header_wrap">
             <div id="header_wrap">
@@ -65,9 +88,17 @@
         <!-- 상품탭 시작 -->
         <div class="wrapper">
             <div class="content-wrapper">
-                <h2>현재 컬렉션</h2>
-                <h1>드롭</h1>
-                <p>한정된 수량으로 출시되는 각 컬렉션은 바다의 이야기를 담고 있습니다.</p>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h2>현재 컬렉션</h2>
+                    <h1>드롭</h1>
+                    <p>한정된 수량으로 출시되는 각 컬렉션은 바다의 이야기를 담고 있습니다.</p>
+                </div>
+
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+                <script>
+                    AOS.init();
+                </script>
 
                 <div class="product-grid">
                     <div class="product-item">
@@ -163,9 +194,11 @@
 
         <div id="main5_wrap">
             <div class="main5_1">
-                <h1 class="main5_h1">당신의 공간을 보여주세요</h1>
-                <p class="main5_p">RE:FLOAT로 스타일링한 당신의 방을 공유하세요</p>
-                <a href="#" class="main5_a">쇼핑하기</a>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h1 class="main5_h1">당신의 공간을 보여주세요</h1>
+                    <p class="main5_p">RE:FLOAT로 스타일링한 당신의 방을 공유하세요</p>
+                    <a href="./sub2.html" class="main5_a">갤러리</a>
+                </div>
             </div>
             <div class="main5_2">
                 <img id="slider-img" src="../img/sub3_slide.png" alt="">

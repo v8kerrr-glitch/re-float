@@ -5,12 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>re:float</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="./img/Company Logo - 복사본.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/Company Logo - 복사본.png">
     <link rel="stylesheet" href="../css/style(sub2).css">
     <link rel="stylesheet" href="../js/blueroom.js">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/Company Logo - 복사본.png">
 </head>
 
 <body>
+    <div class="pixel-cursor"></div>
+    <script>const cursor = document.querySelector('.pixel-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// 버튼, 링크, 문의하기 버튼 등에 호버 시 active 클래스 추가
+document.addEventListener('mouseover', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.add('active');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.remove('active');
+    }
+});</script>
     <div id="wrap_wrap">
         <div id="header_wrap">
             <div class="header">
@@ -20,15 +42,15 @@
                     </li>
 
                     <li class="menu-item">
-                            <a href="./sub1.html">
-                                <p>THE TIDE</p>
-                            </a>
-                        </li>
+                        <a href="./sub1.html">
+                            <p>THE TIDE</p>
+                        </a>
+                    </li>
 
-                        <li class="menu-item">
-                            <a href="./sub4.html">
-                                <p>탐색</p>
-                            </a>
+                    <li class="menu-item">
+                        <a href="./sub4.html">
+                            <p>탐색</p>
+                        </a>
                         <div class="mega-menu">
                             <div class="mega-inner">
                                 <div class="menu-col">
@@ -63,10 +85,17 @@
         </div>
         <div class="archive-wrap">
             <div class="archive-inner">
-                <p class="subtitle">아카이브</p>
-                <h2 class="title">갤러리 앤 아카이브</h2>
-                <p class="desc">분위기, 스타일링, 커뮤니티. RE:FLOAT의 라이프 스타일을 공유하세요.</p>
+                <div data-aos="fade-up">
+                    <p class="subtitle">아카이브</p>
+                    <h2 class="title">갤러리 앤 아카이브</h2>
+                    <p class="desc">분위기, 스타일링, 커뮤니티. RE:FLOAT의 라이프 스타일을 공유하세요.</p>
+                </div>
             </div>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+            <script>
+                AOS.init();
+            </script>
         </div>
         <section id="features-wrap">
             <div class="features-inner">
@@ -135,9 +164,11 @@
 
         <div id="main5_wrap">
             <div class="main5_1">
-                <h1 class="main5_h1">당신의 공간을 보여주세요</h1>
-                <p class="main5_p">RE:FLOAT로 스타일링한 당신의 방을 공유하세요</p>
-                <a href="../sub/sub3.html" class="main5_a">쇼핑하기</a>
+                <div data-aos="fade-up">
+                    <h1 class="main5_h1">당신의 공간을 보여주세요</h1>
+                    <p class="main5_p">RE:FLOAT로 스타일링한 당신의 방을 공유하세요</p>
+                    <a href="../sub/sub3.html" class="main5_a">쇼핑하기</a>
+                </div>
             </div>
             <div class="main5_2">
                 <img id="slider-img" src="../img/인테리어4.png" alt="">

@@ -17,10 +17,33 @@
         });
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="./js/tap.js"></script>
 </head>
 
 <body>
+    <!-- 커스텀 커서 요소 -->
+<div class="pixel-cursor"></div>
+
+<script>const cursor = document.querySelector('.pixel-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// 버튼, 링크, 문의하기 버튼 등에 호버 시 active 클래스 추가
+document.addEventListener('mouseover', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.add('active');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    if (e.target.matches('a, button, .faq-action-btn')) {
+        cursor.classList.remove('active');
+    }
+});</script>
     <div id="wrap_wrap">
         <div id="header_wrap">
             <div class="header">
@@ -258,7 +281,9 @@
 
             <div class="product-section">
                 <div class="product-header">
-                    <h2>PRODUCT</h2>
+                    <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <h2>PRODUCT</h2>
+                    </div>
                     <p>바다에서 흘러온 이야기들</p>
                 </div>
 
@@ -326,6 +351,12 @@
             </div>
         </div>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            AOS.init();
+        </script>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -392,10 +423,19 @@
         </script>
         <div id="main8_wrap">
             <div class="main8_1">
-                <h1 class="main8_h1">지금 시작하세요</h1>
-                <p class="main8_p">당신의 공간을 변화시킬 준비가 되었나요? 한정판 컬렉션을 지금 만나보세요</p>
+                <div data-aos="fade-up">
+                    <h1 class="main8_h1">지금 시작하세요</h1>
+                </div>
+                <div data-aos="fade-up"><p class="main8_p">당신의 공간을 변화시킬 준비가 되었나요? 한정판 컬렉션을 지금 만나보세요</p></div>
                 <a href="#" class="main8_a">쇼핑하기</a>
             </div>
+
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+            <script>
+                AOS.init();
+            </script>
+
             <div class="main8_2">
                 <img id="slider-img" src="./img/인테리어1.png" alt="">
                 <script>
